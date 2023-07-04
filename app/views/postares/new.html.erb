@@ -1,0 +1,15 @@
+<h1>New Post</h1>
+
+<%= form_with model: @postare, url: postares_path do |form| %>
+<div class="card" style="width: 40rem;">
+  <div class="card-body">
+        <%= form.label 'Title' %>
+        <%= form.text_area :title, size: "20x1", class:"form-control" %><br>
+        <%= form.label 'Description' %>
+        <%= form.text_area :description, size: "70x5", class:"form-control" %>
+    <br><br>
+        <%= form.submit "Create Post", class:"btn btn-primary" %>
+  </div>
+</div>
+
+<% end %>

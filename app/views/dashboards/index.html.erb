@@ -1,0 +1,20 @@
+<% if @current_user %>
+<h1>Bine ai venit <%= @current_user.email %></h1>
+<% else %>
+<h1>Bine ai venit<h1>
+<% end %>
+<h5>Vizualizarea postarilor:</h5>
+<hr>
+<% @postares.each do |postare| %>
+<div class="card" style="width: 60rem;">
+  <div class="card-body">
+    <strong>Title: </strong><%= link_to postare.title, postare_path(postare.id)  %><br>
+    <strong>Description: </strong><%= postare.description %> <br>
+    <strong>Author: </strong><%= postare.user.email %>
+  <% if @current_user && @current_user.id == postare.user.id %>
+    <%= link_to "Edit Post", edit_postare_path(postare.id) %>
+  <% end %>
+       </div>
+</div>
+        <br><br>
+<% end %>

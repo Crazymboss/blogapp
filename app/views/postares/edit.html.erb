@@ -1,0 +1,14 @@
+ <%= form_with model: @postare do |f| %>
+    <%= f.text_field :id, hidden: true %>
+    <div class="mb-3">
+        <%= f.label 'Title' %>
+        <%= f.text_area :title, size: "5x1", class:"form-control" %>
+    </div>
+    <div><br>
+        <%= f.label 'Description' %>
+        <%= f.text_area :description, size: "70x5", class:"form-control" %>
+    </div>
+    <div><br><br>
+        <%= f.submit "Edit Post", class:"btn btn-primary" %>
+    </div>
+<% end %>

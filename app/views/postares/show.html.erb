@@ -1,0 +1,18 @@
+<% if @current_user %>
+<h1>Bine ai venit <%= @current_user.email %></h1>
+<% else %>
+<h1>Bine ai venit<h1>
+<h3>Te rog sa te loghezi pentru mai multe privilegii<h3>
+<% end %>
+  <% if @current_user && @current_user.id %>
+  <div class="card" style="width: 60rem;">
+  <div class="card-body">
+    <strong>Title: </strong><%= @postare.title %><br>
+    <strong>Description: </strong><%= @postare.description %> <br>
+    <strong>Author: </strong><%= @postare.user.email %><br>
+    <strong>Created Time: </strong><%= @postare.created_at %><br>
+    <Strong>Last time updated: </strong><%= @postare.updated_at%><br>
+      </div>
+</div>
+  <% end %>
+  

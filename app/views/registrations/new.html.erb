@@ -1,0 +1,16 @@
+<h1>Sing Up</h1>
+
+<%= form_with model: @user, url: registrations_path do |form| %>
+    <div>
+        <%= form.label :email %>
+        <%= form.email_field :email,class:"form-control" %>
+    </div>
+    <div><br>
+        <%= form.label :password %>
+        <%= form.password_field :password,class:"form-control" %>
+    </div>
+    <div><br><br>
+        <%= form.submit "Sign Up",class:"btn btn-primary" %>
+    </div>
+
+<% end %>
